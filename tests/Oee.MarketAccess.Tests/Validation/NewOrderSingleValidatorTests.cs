@@ -1,4 +1,4 @@
-using Oee.MarketAccess.Tests.Catalog;
+using Oee.MarketAccess.Catalog;
 using Oee.MarketAccess.Validation;
 using QuickFix.Fields;
 
@@ -10,7 +10,7 @@ public sealed class NewOrderSingleValidatorTests
 
     public NewOrderSingleValidatorTests()
     {
-        var catalog = IgnoreCaseInstrumentCatalog.New_With_Tradeable_AAPL_And_Untradeable_NVDA();
+        var catalog = new InMemoryInstrumentCatalog(SyntheticInstrumentSeed.CreateProfiles());
         _validator = new(catalog);
     }
 

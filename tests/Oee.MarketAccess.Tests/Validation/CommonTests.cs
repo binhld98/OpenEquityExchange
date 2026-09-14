@@ -1,4 +1,4 @@
-using Oee.MarketAccess.Tests.Catalog;
+using Oee.MarketAccess.Catalog;
 using Oee.MarketAccess.Validation;
 
 namespace Oee.MarketAccess.Tests.Validation;
@@ -9,7 +9,7 @@ public sealed class CommonTests
 
     public CommonTests()
     {
-        IgnoreCaseInstrumentCatalog catalog = new();
+        InMemoryInstrumentCatalog catalog = new();
         _validator = new(catalog);
     }
 
